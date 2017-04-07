@@ -1,14 +1,14 @@
 from __future__ import print_function
 import traceback
-from printi import printi_package_depth
+from printind import initial_depth
 
 
-def printi_function_call(string_in, indent_level=None, indent_pattern='  ', debug=0):
+def printi(string_in, indent_level=None, indent_pattern='  ', debug=0):
     assert type(string_in) == str
 
     if indent_level is None:
         extracted_stack = traceback.extract_stack()
-        depth_in = len(extracted_stack) - printi_package_depth
+        depth_in = len(extracted_stack) - initial_depth
 
         if debug:
             print("depth_in: " + str(depth_in))

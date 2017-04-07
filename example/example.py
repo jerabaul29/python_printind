@@ -1,29 +1,29 @@
-from printi.printi_function import printi_function_call
+from printind.printind_function import printi
 
 
 def f_1(debug=0):
-    printi_function_call('start f_1', debug=debug)
-    printi_function_call('f_1 again!')
+    printi('start f_1', debug=debug)
+    printi('f_1 again!')
 
     f_2()
 
     f_3()
 
-    printi_function_call('end f_1')
+    printi('end f_1')
 
 
 def f_2():
-    printi_function_call('start f_2')
+    printi('start f_2')
 
     f_3()
 
-    printi_function_call('f_2, this is the end!')
+    printi('f_2, this is the end!')
 
 
 def f_3():
-    printi_function_call('start f_3')
+    printi('start f_3')
 
-printi_function_call('this is the script')
-printi_function_call('the script is executing')
+printi('this is the script')
+printi('the script is executing')
 f_1()
-printi_function_call('end of the script')
+printi('end of the script')
