@@ -33,3 +33,7 @@ end of the script
 ## Installation
 
 pip install printind
+
+## Keywords
+
+print, print function, indent, automatic indent, stack, depth function call, debugging.
