@@ -1,9 +1,11 @@
 from __future__ import print_function
 import traceback
 from printind import initial_depth
+import inspect
 
 
 def printi(string_in, indent_level=None, indent_pattern='  ', debug=0):
+    """Print with stack depth indentation for easy visual debugging."""
     assert type(string_in) == str
 
     if indent_level is None:
@@ -23,3 +25,25 @@ def printi(string_in, indent_level=None, indent_pattern='  ', debug=0):
         prefix = indent_level * indent_pattern
 
         print(prefix + string_in)
+
+
+def printiv(variable, indent_level=None, indent_pattern='  ', debug=0):
+    """Print a variable and its content with stack depth indentation. Built based
+    on some code released at:
+
+    https://stackoverflow.com/questions/2749796/how-to-get-the-original-variable-name-of-variable-passed-to-a-function"""
+
+    frame = inspect.currentframe()
+    frame = inspect.getouterframes(frame)[1]
+    string = inspect.getframeinfo(frame[0]).code_context[0].strip()
+    args = string[string.find('(') + 1:-1].split(',')
+
+    names = []
+    for i in args:
+        if i.find('=') != -1:
+            names.append(i.split('=')[1].strip())
+
+        else:
+            names.append(i)
+
+    printi("{} = {}".format(names[0], variable))

@@ -1,4 +1,4 @@
-from printind.printind_function import printi
+from printind.printind_function import printi, printiv
 
 
 def f_1(debug=0):
@@ -22,6 +22,10 @@ def f_2():
 
 def f_3():
     printi('start f_3')
+
+    a = 4
+    printiv(a)
+
 
 printi('this is the script')
 printi('the script is executing')

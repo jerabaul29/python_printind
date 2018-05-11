@@ -9,9 +9,12 @@
 Use it like:
 
 ```
-from printind.printind_function import printi
+from printind.printind_function import printi, printiv
 
 printi('my string')
+
+a = 4
+printiv(a)
 ```
 
 For an illustrative code example see the **example** folder. The output of *example.py* called in terminal, or through iPython should look like:
