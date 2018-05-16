@@ -1,8 +1,5 @@
 from setuptools import setup, find_packages
 
-# Get the long description from the README file
-#with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-#    long_description = f.read()
 
 setup(
     name='printind',
@@ -10,7 +7,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.0',
+    version='2.0',
 
     description='Print function indented by the calling function stack depth using the traceback module',
     #long_description=long_description,
@@ -28,5 +25,4 @@ setup(
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     packages=find_packages(),
-
 )

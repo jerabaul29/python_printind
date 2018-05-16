@@ -1,0 +1,6 @@
+[
+  "tests/test_decorators.py::test_printi_function_call_wrapper", 
+  "tests/test_decorators.py::test_decorator_on_all_methods", 
+  "tests/test_decorators.py::test_printi_all_method_calls", 
+  "tests/test_function.py::test_printi_functions"
+]
