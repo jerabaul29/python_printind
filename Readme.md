@@ -4,9 +4,11 @@
 
 **printind** uses the python *traceback* package to indent the print function. This is especially nice when, for example, debugging, as this helps giving an overview of how functions call each other.
 
+In addition to printing functions, decorators for tracking function calls are provided.
+
 ## Use and example
 
-Use it like:
+Use it like (as a print function):
 
 ```
 from printind.printind_function import printi, printiv
@@ -17,21 +19,32 @@ a = 4
 printiv(a)
 ```
 
-For an illustrative code example see the **example** folder. The output of *example.py* called in terminal, or through iPython should look like:
+Use it like (as a decorator):
 
 ```
-this is the script
-the script is executing
-  start f_1
-  f_1 again!
-    start f_2
-      start f_3
-    f_2, this is the end!
-    start f_3
-  end f_1
-end of the script
+from printind.printind_decorators import printi_function_call_wrapper as printidf
+from printind.printind_decorators import printi_all_method_calls as printidc
 
+@printidf
+  def some_function():
+      printi("this is the core")
+
+  some_function()
+
+
+@printidc()
+class some_class_2(object):
+    def __init__(self):
+        printi("this is the init core")
+
+    def some_method(self):
+        printi("this is a method")
+
+some_instance = some_class_2()
+some_instance.some_method()
 ```
+
+For an illustrative code example see the **tests** folder. This can also be used for testing in development: ```pytest -v -s .``` from the root of the module.
 
 ## Installation
 
