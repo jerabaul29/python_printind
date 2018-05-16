@@ -53,3 +53,16 @@ pip install printind
 ## Keywords
 
 print, print function, indent, automatic indent, stack, depth function call, debugging.
+
+# Technical note
+
+## Packaging
+
+The module is packaged by:
+
+```
+python setup.py sdist
+twine upload dist/printind-3.0.tar.gz
+```
+
+*NOTE* that twine is using the credentials stored in .pypirc
