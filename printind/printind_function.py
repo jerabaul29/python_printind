@@ -27,7 +27,7 @@ def printi(string_in, indent_level=None, indent_pattern='  ', debug=0):
         print(prefix + string_in)
 
 
-def printiv(variable, indent_level=None, indent_pattern='  ', debug=0):
+def printiv(variable, indent_level=None, indent_pattern='  ', debug=0, remove_self=True):
     """Print a variable and its content with stack depth indentation. Built based
     on some code released at:
 
@@ -46,4 +46,9 @@ def printiv(variable, indent_level=None, indent_pattern='  ', debug=0):
         else:
             names.append(i)
 
-    printi("{} = {}".format(names[0], variable))
+    crrt_name = names[0]
+    if remove_self:
+        if crrt_name[0:5] == "self.":
+            crrt_name = crrt_name[5:]
+
+    printi("{} = {}".format(crrt_name, variable))
