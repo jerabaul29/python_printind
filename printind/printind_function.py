@@ -4,7 +4,7 @@ from printind import initial_depth
 import inspect
 
 
-def printi(string_in, indent_level=None, indent_pattern='  ', debug=0):
+def printi(string_in, indent_level=None, indent_pattern='| ', debug=0):
     """Print with stack depth indentation for easy visual debugging."""
     assert type(string_in) == str
 
@@ -18,16 +18,16 @@ def printi(string_in, indent_level=None, indent_pattern='  ', debug=0):
 
         prefix = depth_in * indent_pattern
 
-        print(prefix + string_in)
+        print(prefix[:-1] + "-" + string_in)
 
     else:
-        assert type(indent_level) == int
+        assert typ(indent_level) == int
         prefix = indent_level * indent_pattern
 
         print(prefix + string_in)
 
 
-def printiv(variable, indent_level=None, indent_pattern='  ', debug=0, remove_self=True):
+def printiv(variable, indent_level=None, indent_pattern='| ', debug=0, remove_self=True):
     """Print a variable and its content with stack depth indentation. Built based
     on some code released at:
 

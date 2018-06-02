@@ -62,7 +62,7 @@ The module is packaged by:
 
 ```
 python setup.py sdist
-twine upload dist/printind-3.0.tar.gz
+twine upload dist/printind-x.x.tar.gz
 ```
 
 *NOTE* that twine is using the credentials stored in .pypirc
